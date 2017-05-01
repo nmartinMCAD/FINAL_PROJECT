@@ -1,0 +1,57 @@
+//*** GLITCH ***//
+.glitch:before, .glitch:after {
+  color: $gold;
+  content: 'web';
+  font-family: $header-font;
+  font-size: 3em;
+  position: absolute;
+  top: 10rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.glitch:after {
+  color: $teal;
+  z-index: -2;
+  text-shadow: -1px 0 $fuschia;
+  background: transparent;
+}
+
+.glitch:before {
+  color: $black;
+  z-index: 15;
+  text-shadow: -1px 0 $black;
+ }
+
+.glitch::before {
+  animation: glitch 4s both infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  animation: glitch 2s infinite linear;
+}
+
+@keyframes glitch {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0); }
+  33% {
+    -webkit-transform: translate(1.5px);
+    transform: translate(1.5px); }
+  50% {
+    -webkit-transform: translate(0);
+    transform: translate(0); }
+  66% {
+    -webkit-transform: translate(-1.5px);
+    transform: translate(-1.5px); }
+  75% {
+    -webkit-transform: translate(0);
+    transform: translate(0); }
+  100% {
+    -webkit-transform: translate(-.75px);
+    transform: translate(-.75px); }
+  to {
+    -webkit-transform: translate(0);
+    transform: translate(0); }
+}
