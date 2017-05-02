@@ -1,57 +1,92 @@
-//*** GLITCH ***//
-.glitch:before, .glitch:after {
-  color: $gold;
-  content: 'web';
-  font-family: $header-font;
-  font-size: 3em;
-  position: absolute;
-  top: 10rem;
-  left: 0;
-  height: 100%;
-  width: 100%;
+.glitch{
+  color:$white;
+  font-size:15vw;
+  margin:0 auto;
+}
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(1)+px,5000px,random(100)+px,0);
+    }
+  }
+}
+.glitch:after{
+  content:'port';
+  position:absolute;
+  top: 10vw;
+  left: 14vw;
+  text-shadow:-2px 0 $fuschia;
+  color:$white;
+  background:$black;
+  clip:rect(0, 500px,0,0);
+  animation:noise-anim 8s infinite linear alternate-reverse;
 }
 
-.glitch:after {
-  color: $teal;
-  z-index: -2;
-  text-shadow: -1px 0 $fuschia;
-  background: transparent;
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:before{
+  content: 'port';
+  position:absolute;
+  top: 11vw;
+  left: 14vw;
+  text-shadow:3px 0 $fuschia;
+  color: $white;
+  background: $teal;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim-2 12s infinite linear alternate-reverse;
 }
 
-.glitch:before {
-  color: $black;
-  z-index: 15;
-  text-shadow: -1px 0 $black;
- }
 
-.glitch::before {
-  animation: glitch 4s both infinite linear alternate-reverse;
+
+
+.glitch2{
+  color:$white;
+  font-size:15vw;
+  margin:0 auto;
+}
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(1)+px,5000px,random(100)+px,0);
+    }
+  }
+}
+.glitch2:after{
+  content:'folio';
+  position:absolute;
+  top: 27vw;
+  left: 12.5vw;
+  text-shadow:-2px 0 $dark-fuschia;
+  color:$white;
+  background:$black;
+  clip:rect(0, 500px,0,0);
+  animation:noise-anim 12s infinite linear alternate-reverse;
 }
 
-.glitch::after {
-  animation: glitch 2s infinite linear;
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
 }
-
-@keyframes glitch {
-  0% {
-    -webkit-transform: translate(0);
-    transform: translate(0); }
-  33% {
-    -webkit-transform: translate(1.5px);
-    transform: translate(1.5px); }
-  50% {
-    -webkit-transform: translate(0);
-    transform: translate(0); }
-  66% {
-    -webkit-transform: translate(-1.5px);
-    transform: translate(-1.5px); }
-  75% {
-    -webkit-transform: translate(0);
-    transform: translate(0); }
-  100% {
-    -webkit-transform: translate(-.75px);
-    transform: translate(-.75px); }
-  to {
-    -webkit-transform: translate(0);
-    transform: translate(0); }
+.glitch2:before{
+  content: 'folio';
+  position:absolute;
+  top: 28vw;
+  left: 12.5vw;
+  text-shadow:3px 0 $teal;
+  color: $white;
+  background: $fuschia;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim-2 16s infinite linear alternate-reverse;
 }

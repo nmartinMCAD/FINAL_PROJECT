@@ -27,6 +27,7 @@ div.section-content img.webshowcase {
     }
 
     @include desktop {
+      width: 50%;
       max-width: 800px;
     }
 }

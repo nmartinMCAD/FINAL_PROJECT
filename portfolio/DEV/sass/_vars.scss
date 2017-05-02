@@ -14,18 +14,26 @@ $teal: #39CCCC;
 $blue: #7FDBFF;
 $gold: #FEAC2B;
 $navy: #042439;
+$green: #00FF84;
+$grey: #444;
 
 
 //*media queries*//
 
 $tablet-width: "screen and (min-width: 480px)";
+$laptop-width: "screen and (min-width: 720px)";
 $desktop-width: "screen and (min-width: 1080px)";
-
 
 //*mixins*//
 
 @mixin tablet {
   @media #{$tablet-width} {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media #{$laptop-width} {
     @content;
   }
 }
