@@ -1,27 +1,184 @@
-html {
+body {
   background-color: $black;
 }
 
 header {
-  width: 100%;
-  height: 18vw;
-  background: $dark-fuschia;
-  text-align: center;
+  height: 9vw;
+  text-align: right;
+  margin-top: 4vw;
 
     @include tablet {
-      height: 75px;
-    }
-
-    @include laptop {
-      text-align: left;
+      height: 50px;
+      margin-top: 1rem;
     }
 
     @include desktop {
-      background-color: transparent;
-      margin-top: 1rem;
+      text-align: left;
       line-height: 1;
     }
 }
+
+article.pagetitle {
+  height: 14vw;
+  position: relative;
+
+  @include tablet {
+    height: 5rem;
+  }
+}
+
+section.section-controllers {
+  width: 95%;
+  margin: auto;
+  margin-top: 8vh;
+
+  @include tablet {
+    margin-top: 3rem;
+  }
+
+  @include laptop {
+    width: 60%;
+    margin: 0;
+    margin-top: 8rem;
+  }
+
+  @include desktop {
+    width: 25%;
+    margin-top: 1rem;
+  }
+}
+
+.sitesection {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  @include laptop {
+    text-align: right;
+  }
+}
+
+div.section-content {
+  width: 95%;
+  margin: auto;
+  max-width: 1400px;
+}
+
+div.sectioncopy {
+
+  @include laptop {
+    text-align: left;
+    width: 45%;
+    float: right;
+}
+}
+
+
+//*** SECTION STYLES ***//
+section#web {
+  background-color: $fuschia;
+  color: $white;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 1000;
+}
+
+section#writing {
+  background-color: $teal;
+  color: $white;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 2000;
+}
+
+section#photo {
+  background-color: $gold;
+  color: $white;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 3000;
+}
+
+section#music {
+  background-color: $green;
+  color: $white;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 4000;
+}
+
+
+//*** SECTION TRANSITIONS ***//
+.web-section-checkbox ~ section#web { transition: left .666s ease .1s }
+
+.web-section-checkbox:checked ~ section#web { left: 0;}
+
+
+.writing-section-checkbox ~ section#writing { transition: left .666s ease .1s }
+
+.writing-section-checkbox:checked ~ section#writing { left: 0; }
+
+
+.photo-section-checkbox ~ section#photo { transition: left .666s ease .1s }
+
+.photo-section-checkbox:checked ~ section#photo { left: 0; }
+
+
+.music-section-checkbox ~ section#music { transition: left .666s ease .1s }
+
+.music-section-checkbox:checked ~ section#music { left: 0; }
+
+
+
+div.bttnwrap {
+  position: relative;
+  border: 1px solid $white;
+  margin-top: 6vw;
+  height: 13.5vw;
+  width: 55vw;
+  float: right;
+
+  @include tablet {
+    height: 4rem;
+    width: 20rem;
+    margin-top: 2rem;
+  }
+
+  @include laptop {
+    border: 2px solid $white;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+
+
+
+
+
+.projectspage * {
+  margin: 0;
+  padding: 0;
+}
+
+.projectspage nav {
+  background-color: $black;
+  text-align: left;
+  height: 100%;
+  margin: 8vw;
+}
+
+
+
+
+//*** FOOTER ***//
+/***** Footer not in use currently
 
 footer {
   display: none;
@@ -35,145 +192,8 @@ footer {
     }
 }
 
-article.pagetitle {
-  text-align: center;
-  margin-top: 4vh;
-  position: relative;
-  width: 100%;
-  margin: auto;
-  margin-top: 2rem;
-  text-align: center;
-  background-image: url(../img/hexagon.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-
-  @include desktop {
-    width: 70%;
-    float: right;
-    margin-top: 0;
-  }
-
-}
-
-section.section-controllers {
-  margin-top: 2rem;
-  width: 95%;
-  margin: auto;
-  margin-top: 6vh;
-
-  @include laptop {
-    width: 60%;
-    margin: -1rem 0 0 -1px;
-  }
-
-  @include desktop {
-    width: 25%;
-    margin: 0;
-    margin-top: 4rem;
-  }
-}
-
-.sitesection {
-  height: 100vh;
-  width: 100%;
-  position: relative;
-}
-
-div.section-content {
-  width: 95%;
-  margin: auto;
-  position: relative;
-}
 
 
-//*** SECTION STYLES ***//
-section#web {
-  background-color: $fuschia;
-  color: $white;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  z-index: 1000;
-  opacity: 0;
-}
-
-section#writing {
-  background-color: $teal;
-  color: $white;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  z-index: 2000;
-  opacity: 0;
-}
-
-section#photo {
-  background-color: $gold;
-  color: $white;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  z-index: 3000;
-  opacity: 0;
-}
-
-section#music {
-  background-color: $green;
-  color: $white;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  z-index: 4000;
-  opacity: 0;
-}
-
-
-//*** SECTION TRANSITIONS ***//
-.web-section-checkbox ~ section#web { transition: left .666s ease .1s, opacity .666s ease .1s }
-
-.web-section-checkbox:checked ~ section#web { left: 0; opacity: 1;}
-
-
-.writing-section-checkbox ~ section#writing { transition: left .666s ease .1s, opacity .666s ease .1s }
-
-.writing-section-checkbox:checked ~ section#writing { left: 0; opacity: 1;}
-
-
-.photo-section-checkbox ~ section#photo { transition: left .666s ease .1s, opacity .666s ease .1s}
-
-.photo-section-checkbox:checked ~ section#photo { left: 0; opacity: 1; }
-
-
-.music-section-checkbox ~ section#music { transition: left .666s ease .1s, opacity .666s ease .1s }
-
-.music-section-checkbox:checked ~ section#music { left: 0; opacity: 1; }
-
-
-
-
-
-/* Code From Robert
-
-div {
-  transition: background 0.2s ease,
-              padding 0.8s linear;
-}
-
-[4/26/17, 3:44:20 PM] Robert: div {
-  transition: background 0.2s ease,
-              padding 0.8s linear;
-}
-[4/26/17, 3:44:59 PM] Robert: transition: background-color 500ms ease-out 1s;
-
-display transition on .1 second
-
-/**/
-
-
-
-
-
-//*** FOOTER ***//
 div.footmobiletextures {
 
   @include tablet {
@@ -190,3 +210,5 @@ div.socmedia {
       padding-right: 3rem;
     }
 }
+
+*****/

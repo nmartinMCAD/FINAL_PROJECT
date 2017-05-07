@@ -1,39 +1,61 @@
+img.pagebg {
+    position: absolute;
+    right: 0;
+    bottom: 5rem;
+    opacity: .1;
+    width: 130%;
+    max-width: 1350px;
+    z-index: -10;
+
+    @include laptop {
+      width: 100%;
+      bottom: 1rem;
+    }
+
+    @include desktop {
+      opacity: .2;
+    }
+}
+
 img.categorylogo {
   width: 20vw;
   position: absolute;
   top: 1rem;
-  right: 0;
+  right: 1rem;
 
   @include tablet {
     width: 100px;
   }
 
-  @include desktop {
-    width: 120px;
+  @include laptop {
+    width: 70%;
+    opacity: .2;
+    z-index: -1;
+    top: 2rem;
   }
 }
 
 
 div.section-content img.webshowcase {
     width: 90vw;
-    max-width: 800px;
+    max-width: 700px;
     display: block;
     margin: auto;
-    margin-top: 4vh;
+    margin-top: 8vw;
 
     @include tablet {
-      width: 85%;
-      max-width: 600px;
+      width: 80%;
+      margin-top: 3rem;
     }
 
-    @include desktop {
+    @include laptop {
       width: 50%;
-      max-width: 800px;
+      float: left;
     }
 }
 
 
-//*** FOOTER ***//
+/***** FOOTER (not currently in use)
 .footericon {
   width: 50%;
   max-width: 15rem;
@@ -73,3 +95,5 @@ img.footertexturecenter {
   left: 50%;
   transform: translateX(-50%);
 }
+
+*****/

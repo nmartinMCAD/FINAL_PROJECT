@@ -2,72 +2,54 @@ html {
   font-family: $copy-font;
   font-weight: $copy-weight;
   font-size: 16px;
+  cursor: url(../img/trackglove_cursor.png), auto;
 }
 
+a, input, label, i {
+   cursor: url(../img/trackglove_cursorlink.png), auto;
+ }
+
 h1 {
-  color: $white;
   font-family: $header-font;
-  font-size: 12vw;
+  font-size: 7vw;
+  color: $dark-fuschia;
+  text-transform: uppercase;
+  padding-top: 2vw;
+  padding-right: 2vw;
 
     @include tablet {
-      font-size: 3em;
+      font-size: 2.2em;
     }
 
     @include laptop {
-      margin-left: 2rem;
+      font-size: 3.2em;
     }
 
     @include desktop {
-        font-size: 3.3em;
+        font-size: 4em;
         margin-left: 1rem;
+        padding-top: 3rem;
     }
 }
 
 h2.title {
-  font-family: $header-font;
-  font-size: 14vw;
-  line-height: .8;
-  padding:14vw;
-  padding-bottom: 15vw;
+  font-family: $copy-font;
+  text-transform: uppercase;
+  font-size: 15vw;
 
     @include tablet {
-      font-size: 4.7em;
-      padding: 4rem;
-      padding-bottom: 5rem;
+      font-size:5em;
     }
 
     @include laptop {
-      font-size: 8em;
-      padding: 5rem;
-      padding-bottom: 6rem;
-      margin-right: 1rem;
-      background-position: right;
-      text-align: right;
+      font-size: 7.5em;
     }
 
     @include desktop {
-      font-size: 10em;
-      padding: 9rem;
-      padding-bottom: 10rem;
-      text-align: center;
-      background-position: center;
-      color: $dark-fuschia;
+      font-size: 11vw;
     }
 }
 
-span {
-  color: transparent;
-}
-
-h2 br {
-  @include tablet {
-    display: none;
-  }
-
-  @include desktop {
-    display: block;
-  }
-}
 
 /*** SECTION CONTROLLERS ***/
 input {
@@ -78,7 +60,6 @@ label {
   display: block;
   font-family: $header-font;
   font-size: 10vw;
-  cursor: crosshair;
   margin-bottom: 1rem;
   padding-left: 1rem;
 
@@ -86,51 +67,86 @@ label {
       font-size: 3em;
     }
 
+    @include laptop {
+      margin-left: -2px;
+    }
+
     @include desktop {
       font-size: 3em;
-      margin-left: -1px;
   }
 }
+
 
 label.web-section-label {
   color: $fuschia;
   border: 1px solid $fuschia;
+
+  @include laptop {
+    border-width: 2px;
+  }
 }
+
+label.web-section-label:hover {
+  background-color: $fuschia;
+  color: $white;
+}
+
 
 label.writing-section-label {
   color: $teal;
   border: 1px solid $teal;
+
+  @include laptop {
+    border-width: 2px;
+  }
+}
+
+label.writing-section-label:hover {
+  background-color: $teal;
+  color: $white;
 }
 
 label.photo-section-label {
   color: $gold;
   border: 1px solid $gold;
+
+  @include laptop {
+    border-width: 2px;
+  }
+}
+
+label.photo-section-label:hover {
+  background-color: $gold;
+  color: $white;
 }
 
 label.music-section-label {
   color: $green;
   border: 1px solid $green;
+
+  @include laptop {
+    border-width: 2px;
+  }
 }
 
-.sitesection label {
-  background-image: none;
+label.music-section-label:hover {
+  background-color: $green;
+  color: $white;
 }
+
 
 .sitesection i {
-  font-size: 20vw;
-  cursor: crosshair;
+  font-size: 10vh;
   position: absolute;
-  right: 1rem;
-  bottom: 0;
+  bottom: 1rem;
+  left: 1rem;
 
     @include tablet {
       font-size: 2em;
     }
 
-    @include desktop {
-      font-size: 2.5em;
-      left: 2rem;
-      width: 7.5%;
+    @include laptop {
+      top: 1rem;
     }
 }
 
@@ -139,23 +155,26 @@ label.music-section-label {
 .sitesection h3 {
   display: inline;
   font-family: $header-font;
-  font-size: 11vw;
+  font-size: 13vw;
   color: $white;
-  margin-bottom: 3rem;
+  margin-left: 1rem;
 
     @include tablet {
-      font-size: 3em;
+      font-size: 4em;
+    }
+
+    @include laptop {
+      font-size: 5em;
+      margin-right: 1rem;
     }
 
     @include desktop {
-      font-size: 3.5em;
+      font-size: 5em;
     }
 }
 
 .sitesection h4 {
   font-family: $copy-font;
-  font-weight: $subhead-weight;
-  letter-spacing: .15rem;
   font-size: 7vw;
   color: $white;
   text-transform: uppercase;
@@ -165,9 +184,45 @@ label.music-section-label {
       font-size: 1.5em;
     }
 
-    @include desktop {
+    @include laptop {
       font-size: 2em;
     }
+
+    @include desktop {
+      font-size: 4em;
+    }
+}
+
+section#web h4 {
+  text-shadow: 5px 5px $dark-fuschia;
+
+  @include desktop {
+      text-shadow: 7px 7px $dark-fuschia;
+  }
+}
+
+section#writing h4 {
+  text-shadow: 5px 5px $dark-teal;
+
+  @include desktop {
+      text-shadow: 7px 7px $dark-teal;
+  }
+}
+
+section#photo h4 {
+  text-shadow: 5px 5px $dark-gold;
+
+  @include desktop {
+      text-shadow: 7px 7px $dark-gold;
+  }
+}
+
+section#music h4 {
+  text-shadow: 5px 5px $dark-green;
+
+  @include desktop {
+      text-shadow: 7px 7px $dark-green;
+  }
 }
 
 .sitesection p {
@@ -180,7 +235,7 @@ label.music-section-label {
     }
 
     @include desktop {
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
 }
 
@@ -188,19 +243,29 @@ label.music-section-label {
   text-decoration: none;
 }
 
-a.categorybttn {
+div.glitchbttn {
   font-family: $header-font;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 7vw;
   color: $white;
-  border: 1px solid;
-  margin-top: 3vh;
-  padding: 0 1rem .4rem 1rem;
-  float: right;
+
+  @include tablet {
+    font-size: 2.5em;
+  }
 }
 
 
-//*** FOOTER ***//
+
+.projectspage li {
+  font-family: $header-font;
+  font-size: 8vw;
+  list-style-type: none;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+
+/***** FOOTER (not currently in use)
 div.socmedia i {
   color: $white;
 }
@@ -219,3 +284,4 @@ footer p {
       padding-right: 3rem;
     }
 }
+*****/
