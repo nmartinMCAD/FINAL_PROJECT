@@ -160,21 +160,22 @@ div.bttnwrap {
 
 
 
+/***** Turned off for final assignment due to lack of content *****/
 
-
-.projectspage * {
-  margin: 0;
-  padding: 0;
+#writing div.section-content {
+  display: none;
+  visibility: hidden;
 }
 
-.projectspage nav {
-  background-color: $black;
-  text-align: left;
-  height: 100%;
-  margin: 8vw;
+#photo div.section-content {
+  display: none;
+  visibility: hidden;
 }
 
-
+#music div.section-content {
+  display: none;
+  visibility: hidden;
+}
 
 
 //*** FOOTER ***//
